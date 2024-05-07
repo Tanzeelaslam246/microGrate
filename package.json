@@ -1,0 +1,50 @@
+{
+  "name": "notadd-appliaction-starter",
+  "version": "1.0.0",
+  "description": "The starter application for notadd.",
+  "scripts": {
+    "start": "ts-node -r tsconfig-paths/register src/main.ts",
+    "start:watch": "nodemon",
+    "debug": "node --inspect-brk -r ts-node/register src/main.ts",
+    "debug:watch": "nodemon --config nodemon-debug.json",
+    "check": "tslint -p tsconfig.json -c tslint.json",
+    "fix": "tslint -p tsconfig.json -c tslint.json --fix",
+    "grpc:gen": "./node_modules/.bin/rxjs-grpc -o src/grpc/generated.ts src/grpc/protobufs/*.proto",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
+  },
+  "author": "notadd",
+  "license": "Apache-2.0",
+  "private": false,
+  "dependencies": {
+    "@grpc/proto-loader": "0.5.0",
+    "@nestjs/common": "6.2.0",
+    "@nestjs/core": "6.2.0",
+    "@nestjs/graphql": "6.2.1",
+    "@nestjs/microservices": "6.2.0",
+    "apollo-server-express": "2.5.0",
+    "graphql": "14.3.0",
+    "graphql-tools": "4.0.4",
+    "graphql-type-json": "0.3.0",
+    "grpc": "1.20.3",
+    "i18n": "0.8.3",
+    "jsonwebtoken": "8.5.1",
+    "reflect-metadata": "0.1.13",
+    "rxjs": "6.5.2",
+    "typescript": "3.4.5",
+    "snyk": "1.165.0"
+  },
+  "devDependencies": {
+    "@types/graphql": "14.2.0",
+    "@types/graphql-type-json": "0.3.0",
+    "@types/i18n": "0.8.5",
+    "@types/jsonwebtoken": "8.3.2",
+    "@types/node": "10.14.6",
+    "nodemon": "1.19.0",
+    "rxjs-grpc": "1.0.0-rxjs6.0",
+    "ts-node": "8.1.0",
+    "tsconfig-paths": "3.8.0",
+    "tslint": "5.16.0"
+  },
+  "snyk": true
+}
